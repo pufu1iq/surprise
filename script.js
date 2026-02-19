@@ -73,13 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // For local dev, this might be file://... which won't work on mobile well.
     // If user deploys, this will work.
 
-    new QRCode(document.getElementById("qrcode"), {
-        text: currentUrl,
-        width: 128,
-        height: 128,
-        colorDark: "#d02090",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
+    // --- 4. QR Code Generator ---
+    // (Removed from UI as per request, ensuring standalone file usage instead)
+
+    // --- 5. Card Flip Logic ---
+    const cards = document.querySelectorAll('.memory-card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
     });
 
 });

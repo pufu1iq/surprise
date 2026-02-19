@@ -182,18 +182,82 @@ h2 {
     gap: 30px;
 }
 
+/* Memory Card Flip Effect */
 .memory-card {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    perspective: 1000px;
+    /* Enable 3D perspective */
+    height: 350px;
+    /* Fixed height for flip to work */
+    cursor: pointer;
 }
 
-.memory-card:hover {
-    transform: translateY(-10px);
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-front,
+.memory-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.memory-card-front {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.memory-card-back {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.secret-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin-top: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide original caption on front as we have text on back now, 
+   or we can keep it overlaid. Let's hide it for cleaner front. */
+.memory-card-front .caption {
+    display: none;
+}
+
+.memory-card-back .caption {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .img-placeholder {
@@ -231,18 +295,7 @@ h2 {
     padding: 50px 20px 100px;
 }
 
-#qrcode-container {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    display: inline-block;
-    margin-top: 20px;
-    color: #333;
-}
-
-#qrcode {
-    margin-top: 10px;
-}
+/* QR Code styles removed */
 
 /* Animations Helper */
 .animate-reveal {
