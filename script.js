@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         heart.style.animationDuration = Math.random() * 3 + 4 + "s"; // 4-7 seconds
 
         // Random Size
-        const size = Math.random() * 10 + 10 + "px"; // 10-20px (default CSS is 30, we'll scale it)
+        const size = Math.random() * 20 + 20 + "px"; // 20-40px range
         heart.style.width = size;
         heart.style.height = size;
 
