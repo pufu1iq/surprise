@@ -415,3 +415,88 @@ h2 {
         gap: 20px;
     }
 }
+
+/* 100 Reasons Section */
+.reasons-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.reasons-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reasons-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+/* Custom Scrollbar for webkit */
+.reasons-container::-webkit-scrollbar {
+    width: 6px;
+}
+.reasons-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+.reasons-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 107, 129, 0.6);
+    border-radius: 10px;
+}
+
+.reason-item {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: transform 0.2s ease, background 0.2s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.reason-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.reason-number {
+    font-weight: bold;
+    color: #ff4757;
+    margin-right: 15px;
+    min-width: 40px;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .reasons-wrapper {
+        padding: 20px 15px;
+        margin: 0 15px 40px;
+    }
+    .reasons-title {
+        font-size: 2.2rem;
+    }
+    .reason-item {
+        font-size: 1.05rem;
+        padding: 12px 15px;
+    }
+    .reason-number {
+        font-size: 1.2rem;
+        min-width: 30px;
+    }
+}
