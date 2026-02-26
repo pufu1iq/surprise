@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Pentru că mă înveți mereu ceva nou.",
         "Pentru răbdarea pe care o ai cu mine.",
         "Pentru felul în care te bucuri de lucrurile mărunte.",
-        "Pentru mesajele tale curajoase de bună dimineața.",
+        "Pentru mesajele tale de bună dimineața.",
         "Pentru că mă faci să vreau să devin o versiune mai bună a mea.",
         "Pentru susținerea ta necondiționată.",
         "Pentru cât de inteligentă și descurcăreață ești.",
